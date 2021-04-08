@@ -1,10 +1,15 @@
 """Все о классах"""
 
-
 class One:
     def __init__(self):
         self.a = 1
         self.b = 2
+
+    def setdata(self, aaa):
+        self.data = aaa
+
+    def setdispl(self):
+        print(self.data)
 
 class Two:
     def __init__(self):
@@ -12,21 +17,26 @@ class Two:
         self.a = 2
         self.e = 4
 
-class Tree(One, Two):
+    def setdispl(self):
+        print('aaaaaa')
+
+class Tree(Two, One):
     def __init__(self):
-        super().__init__()
+        # One().__init__()
+        # Two().__init__()
         self.d = 3
         self.c = 3
         self.b = 3
 
+    def setdispl(self):
+        print('asdasd', self.data)
+
+
 if __name__=='__main__':
-    #рассматриваем класс tree
-    #one = One()
-    #two = Two()
+    #рассматриваем класс tree переопределяем атрибуты его класса
     tree = Tree()
-    #
-    # print(one.__dict__)
-    # print(two.__dict__)
+    tree.setdata('qwe')
+    tree.setdispl()
     print(tree.__dict__)
 
 
